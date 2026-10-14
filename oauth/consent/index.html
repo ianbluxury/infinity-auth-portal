@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://esm.sh; connect-src https://yfzqzrrxapdkotqklegg.supabase.co https://esm.sh; style-src 'unsafe-inline'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<title>Infinity | OAuth consent</title>
+<style>body{background:#0c1020;color:#f1f3ff;font:16px system-ui;margin:0;padding:24px}.panel{max-width:460px;margin:7vh auto;background:#171f36;border:1px solid #465074;border-radius:18px;padding:25px}p{line-height:1.55;color:#cbd3ee}button,input{width:100%;box-sizing:border-box;padding:13px;margin:8px 0;border-radius:10px;font:inherit}button{background:#aab5ff;color:#0b1226;border:0;font-weight:700}button:disabled{opacity:.5}input{background:#0b1226;color:#fff;border:1px solid #737eab}#deny{background:#2b3453;color:#fff}#status{white-space:pre-wrap}small{color:#bdc7e3}strong{overflow-wrap:anywhere}</style></head>
+<body><main class="panel"><h1>∞ Infinity authorization</h1><p>Only approve access for an application you recognize. This does not grant access to an Infinity campaign.</p>
+<p id="status" role="status" aria-live="polite">Checking your session…</p>
+<section id="login" hidden><label for="email">Supabase account email</label><input id="email" type="email" autocomplete="email"><button id="send">Send sign-in link</button><small>The link returns here. Never share it or any token in chat.</small></section>
+<section id="consent" hidden><p><strong>Requesting application:</strong> <span id="client"></span></p><p><strong>Requested permissions:</strong> <span id="scopes"></span></p><p><strong>Return destination:</strong> <span id="destination"></span></p><button id="approve">Approve access</button><button id="deny">Deny access</button></section>
+<small>Authorization is handled by Supabase. This page does not store or transmit your tokens to ChatGPT.</small></main><script type="module" src="./consent.js"></script></body></html>
