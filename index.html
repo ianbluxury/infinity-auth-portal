@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://esm.sh; connect-src https://yfzqzrrxapdkotqklegg.supabase.co https://esm.sh; style-src 'unsafe-inline'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<title>Project Infinity | Secure Sign-in</title>
+<style>body{background:#0c1020;color:#f1f3ff;font:16px system-ui;margin:0;padding:24px}.panel{max-width:420px;margin:10vh auto;padding:26px;border:1px solid #465074;border-radius:18px;background:#171f36}h1{margin:0 0 12px}p{line-height:1.5;color:#ccd3ee}label{display:block;margin-top:20px}input,button{box-sizing:border-box;width:100%;padding:14px;font:inherit;border-radius:10px;margin-top:10px}input{background:#0b1226;color:#fff;border:1px solid #737eab}button{border:0;background:#aab5ff;color:#0b1226;font-weight:700}button:disabled{opacity:.5}#status{white-space:pre-wrap}small{color:#c1c8e1}</style></head>
+<body><main class="panel"><h1>∞ Project Infinity</h1><p>Secure authentication only. All RPG gameplay stays in ChatGPT.</p><small>Test account first. Never share sign-in links, verification codes, or session tokens in chat.</small>
+<form id="login"><label for="email">Supabase account email</label><input type="email" id="email" autocomplete="email" required><button id="send" type="submit">Send sign-in link</button></form>
+<button id="logout" type="button" hidden>Sign out</button><p id="status" role="status" aria-live="polite">Checking session…</p>
+<small>Signing in here verifies your browser session. Composio player delegation is not yet connected.</small></main><script type="module" src="./app.js"></script></body></html>

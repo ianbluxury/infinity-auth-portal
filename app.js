@@ -1,0 +1,7 @@
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+const supabase=createClient("https://yfzqzrrxapdkotqklegg.supabase.co","sb_publishable_AYOq03QOCWQyNzyU7VqM6w_bDqGNh0G",{auth:{flowType:"pkce",persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+const status=document.querySelector("#status"),login=document.querySelector("#login"),logout=document.querySelector("#logout"),send=document.querySelector("#send");
+async function update(){const {data,error}=await supabase.auth.getUser();const signed=!!data?.user;login.hidden=signed;logout.hidden=!signed;status.textContent=signed?"Signed in. Supabase verified your browser session. Composio delegation is not connected yet.":(error && error.name!=="AuthSessionMissingError"?"Session check: "+error.message:"Not signed in.");}
+login.addEventListener("submit",async e=>{e.preventDefault();send.disabled=true;status.textContent="Requesting magic link…";const {error}=await supabase.auth.signInWithOtp({email:document.querySelector("#email").value.trim(),options:{emailRedirectTo:location.origin+location.pathname,shouldCreateUser:false}});status.textContent=error?"Could not request sign-in: "+error.message:"Check your email and open the sign-in link in this browser. Do not share it.";send.disabled=false;});
+logout.addEventListener("click",async()=>{await supabase.auth.signOut();await update();});
+supabase.auth.onAuthStateChange(()=>{setTimeout(update,0)});await update();
